@@ -1,6 +1,6 @@
 # Assignment for Course "Lambdas at UvA"
 
-(C) 2016 softlang.org, Ralf Laemmel
+(C) 2016 http://softlang.org, Ralf Laemmel
 
 ## Simple assignment
 
