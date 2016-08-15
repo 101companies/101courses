@@ -21,14 +21,14 @@ import Test.HUnit (runTestTT, Test(TestLabel, TestList), (~?=))
 -- | For example: count 'x' "xyz" == 1
 count :: Char -> [Char] -> Int
 count = undefined
-    
+
 -- | Test cases
 tests :: Test
 tests =
   TestList [
-    TestLabel "count0" $ count 'x' "abc" ~?= 0,
-    TestLabel "count1" $ count 'x' "xyz" ~?= 1,
-    TestLabel "count3" $ count 'a' "reallynotabba" ~?= 3
+    TestLabel "count0" $ 0 ~?= count 'x' "abc",
+    TestLabel "count1" $ 1 ~?= count 'x' "xyz",
+    TestLabel "count3" $ 3 ~?= count 'a' "reallynotabba"
   ]
 
 -- | Run tests
