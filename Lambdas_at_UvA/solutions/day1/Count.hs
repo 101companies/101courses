@@ -22,7 +22,8 @@ import Test.HUnit (runTestTT, Test(TestLabel, TestList), (~?=))
 -- | Hint: you need equality comparison on characters.
 -- | For example: 'a' == 'b' evaluates to False.
 count :: Char -> [Char] -> Int
-count = undefined
+count _ [] = 0
+count c (c':cs) = (if c==c' then 1 else 0)+count c cs
 
 -- | Test cases
 tests :: Test
