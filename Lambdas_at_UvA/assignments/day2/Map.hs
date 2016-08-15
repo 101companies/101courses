@@ -8,7 +8,7 @@ See module Fib.hs for a general guide.
 
 module Map where
 
-import Test.HUnit (runTestTT,Test(TestLabel,TestList),(~?=))
+import Test.HUnit (runTestTT, Test(TestLabel, TestList), (~?=))
 
 -- | function m is True, if the first components of m are distinct.
 function :: [(Char, Char)] -> Bool

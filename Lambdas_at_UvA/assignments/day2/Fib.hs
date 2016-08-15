@@ -15,7 +15,7 @@ encoding for your files.
 
 module Fib where
 
-import Test.HUnit (runTestTT,Test(TestLabel,TestList),(~?=))
+import Test.HUnit (runTestTT, Test(TestLabel, TestList), (~?=))
 
 -- | fibseq n returns the Fibonacci sequence of length n.
 -- | For example: fibseq 5 == [0,1,1,2,3]

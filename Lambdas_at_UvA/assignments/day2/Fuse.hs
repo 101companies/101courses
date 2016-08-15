@@ -8,7 +8,7 @@ See module Fib.hs for a general guide.
 
 module Fuse where
 
-import Test.HUnit (runTestTT,Test(TestLabel,TestList),(~?=))
+import Test.HUnit (runTestTT, Test(TestLabel, TestList), (~?=))
 
 -- | fuse takes two lists and combines them by taking elements alternatingly.
 -- | For example: fuse [1,2,3] [4,5,6] == [1,4,2,5,3,6]
