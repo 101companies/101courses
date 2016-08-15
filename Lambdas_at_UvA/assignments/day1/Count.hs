@@ -13,22 +13,22 @@ encoding for your files.
 
 -}
 
-module Fib where
+module Count where
 
 import Test.HUnit (runTestTT, Test(TestLabel, TestList), (~?=))
 
--- | fibseq n returns the Fibonacci sequence of length n.
--- | For example: fibseq 5 == [0,1,1,2,3]
-fibseq :: Int -> [Int]
-fibseq n = undefined
+-- | count c s returns the number of times c occurs in s.
+-- | For example: count 'x' "xyz" == 1
+count :: Char -> [Char] -> Int
+count = undefined
     
 -- | Test cases
 tests :: Test
 tests =
   TestList [
-    TestLabel "fibseq1" $ fibseq 1 ~?= [0],
-    TestLabel "fibseq5" $ fibseq 5 ~?= [0,1,1,2,3],
-    TestLabel "fibseq8" $ fibseq 8 ~?= [0,1,1,2,3,5,8,13]
+    TestLabel "count0" $ count 'x' "abc" ~?= 0,
+    TestLabel "count1" $ count 'x' "xyz" ~?= 1,
+    TestLabel "count3" $ count 'a' "reallynotabba" ~?= 3
   ]
 
 -- | Run tests
