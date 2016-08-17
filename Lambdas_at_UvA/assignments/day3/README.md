@@ -9,7 +9,7 @@ See these modules:
 * SelectionSort.hs
 * InsertionSort.hs
 
-This assignment deals with simple use cases of foldr/l.
+This assignment deals with simple use cases of foldl/r.
 
 ## Modest assignment
 
@@ -82,3 +82,5 @@ It also exercises Data.Map.
 
 Available documentation:
 https://hackage.haskell.org/package/containers-0.5.7.1/docs/Data-Map-Strict.html
+
+You should have Data.Map readily installed.
