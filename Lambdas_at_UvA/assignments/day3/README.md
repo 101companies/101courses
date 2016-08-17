@@ -53,7 +53,7 @@ You should have Data.Array readily installed.
 
 ### Tough assignment option 2
 
-See the Term.hs module.
+See the module Term.hs.
 
 This assignment deals with type classes in a not so trivial manner.
 
@@ -66,21 +66,8 @@ You should have Data.Map readily installed.
 
 ### Tough assignment option 3
 
-Consider this definition of filter:
+See the module Filter.hs.
 
-<pre>
-filter :: (a -> Bool) -> [a] -> [a]
-filter _ [] = []
-filter p (x:xs) =
-  if p x
-    then x : filter p xs
-    else filter p xs
-</pre>
-
-Transform the definition into one with only one recursive occurrence of filter.
-
-Do not use any local scope ("where").
-
-Do not cause any performance penalty (such as with "concatenation").
+This assignment is about coding the Prelude's filter function in a certain style.
 
 This requires very little code, but a smart idea.
