@@ -13,27 +13,6 @@ This assignment deals with simple use cases of foldl/r.
 
 ## Modest assignment
 
-### Modest assignment option 1
-
-Consider this definition of filter:
-
-<pre>
-filter :: (a -> Bool) -> [a] -> [a]
-filter _ [] = []
-filter p (x:xs) =
-  if p x
-    then x : filter p xs
-    else filter p xs
-</pre>
-
-Transform the definition into one with only one recursive occurrence of filter.
-
-Do not use any local scope ("where").
-
-Do not cause any performance penalty (such as with "concatenation").
-
-### Modest assignment option 2
-
 Consider this definition of binary search:
 
 <pre>
@@ -65,7 +44,7 @@ See the tough assigmnent option 1.
 
 Use Data.Array instead of lists in the implementation of binary search.
 
-Use the solution for modest assignment option 2 as the starting point.
+Use the solution for modest assignment as the starting point.
 
 Available documentation:
 https://hackage.haskell.org/package/array-0.5.1.1/docs/Data-Array.html
@@ -84,3 +63,24 @@ Available documentation:
 https://hackage.haskell.org/package/containers-0.5.7.1/docs/Data-Map-Strict.html
 
 You should have Data.Map readily installed.
+
+### Tough assignment option 3
+
+Consider this definition of filter:
+
+<pre>
+filter :: (a -> Bool) -> [a] -> [a]
+filter _ [] = []
+filter p (x:xs) =
+  if p x
+    then x : filter p xs
+    else filter p xs
+</pre>
+
+Transform the definition into one with only one recursive occurrence of filter.
+
+Do not use any local scope ("where").
+
+Do not cause any performance penalty (such as with "concatenation").
+
+This requires very little code, but a smart idea.
