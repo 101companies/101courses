@@ -74,4 +74,11 @@ You should have Data.Array readily installed.
 
 ### Tough assignment option 2
 
-TBA
+See the Term.hs module.
+
+This assignment deals with type classes in a not so trivial manner.
+
+It also exercises Data.Map.
+
+Available documentation:
+https://hackage.haskell.org/package/containers-0.5.7.1/docs/Data-Map-Strict.html

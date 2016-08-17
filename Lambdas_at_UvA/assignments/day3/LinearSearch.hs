@@ -1,6 +1,6 @@
 -- (C) 2016 softlang.org, Ralf Laemmel
 
-module InsertionSort where
+module LinearSearch where
 
 import Test.HUnit (runTestTT, Test(TestLabel, TestList), (~?=))
 
