@@ -4,7 +4,10 @@
 
 ## Simple assignment
 
-See modules SelectionSort.hs and InsertionSort.hs.
+See these modules:
+* LinearSearch.hs
+* SelectionSort.hs
+* InsertionSort.hs
 
 This assignment deals with simple use cases of foldr/l.
 
@@ -25,7 +28,7 @@ Transform the definition into one with only one recursive occurrence of filter.
 
 Do not use any local scope ("where").
 
-Do not cause any performance penalty (such as "concatenation").
+Do not cause any performance penalty (such as with "concatenation").
 
 ## Tough assignment
 
