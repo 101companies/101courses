@@ -55,7 +55,7 @@ This formulation is good for basic understanding, but its performance is bad.
 
 Transform the definition into one that does not use "take" and "drop"; instead it uses "!!" for indexing.
 
-The resulting reformulation will still be inefficient, if assume that "!!" also implies linear complexity.
+The resulting reformulation will still be inefficient, if we assume that "!!" has linear complexity.
 
 See the tough assigmnent option 1.
 
@@ -63,8 +63,11 @@ See the tough assigmnent option 1.
 
 ### Tough assignment option 1
 
-Use Data.Array instead of lists in a more efficient implementation of binary search, thereby continuing modest assignment option 2.
+Use Data.Array instead of lists in the implementation of binary search.
 
+Use the solution for modest assignment option 2 as the starting point.
+
+Available documentation:
 https://hackage.haskell.org/package/array-0.5.1.1/docs/Data-Array.html
 
 You should have Data.Array readily installed.
