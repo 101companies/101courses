@@ -4,7 +4,9 @@
 
 ## Simple assignment
 
-See module List1.hs.
+See these modules:
+* List1.hs
+* ListOdd.hs
 
 This assignment deals with functors.
 
