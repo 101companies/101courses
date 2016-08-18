@@ -13,7 +13,9 @@ This assignment deals with functors.
 
 ## Modest assignment
 
-See module LLBTree.hs.
+See these modules:
+* LLBTree.hs
+* NLTree.hs
 
 This assignment deals with foldables (and functors).
 
