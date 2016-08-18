@@ -53,7 +53,7 @@ You should have Data.Array readily installed.
 
 ### Tough assignment option 2
 
-See the module Term.hs.
+See module Term.hs.
 
 This assignment deals with type classes in a not so trivial manner.
 
@@ -66,7 +66,7 @@ You should have Data.Map readily installed.
 
 ### Tough assignment option 3
 
-See the module Filter.hs.
+See module Filter.hs.
 
 This assignment is about coding the Prelude's filter function in a certain style.
 
