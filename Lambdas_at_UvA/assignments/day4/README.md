@@ -4,12 +4,12 @@
 
 ## Simple assignment
 
-See these modules:
+See these modules dealing with functors:
 * List1.hs
 * ListOdd.hs
 * ELGraph.hs
 
-This assignment deals with functors.
+See the module Unparser.hs; it deals with pretty printing.
 
 ## Modest assignment
 
