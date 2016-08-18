@@ -21,4 +21,6 @@ This assignment deals with foldables (and functors).
 
 ## Tough assignment
 
-TBA
+See the module BX.hs.
+
+This assignment deals bidirectional transformation.
