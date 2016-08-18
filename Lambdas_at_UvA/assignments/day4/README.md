@@ -21,6 +21,14 @@ This assignment deals with foldables (and functors).
 
 ## Tough assignment
 
+## Tough assignment option 1
+
 See the module BX.hs.
 
-This assignment deals bidirectional transformation.
+This assignment deals with bidirectional transformation.
+
+## Tough assignment option 2
+
+See the module Parser.hs.
+
+This assignment deals with parsing.
