@@ -10,7 +10,9 @@ This assignment deals with functors.
 
 ## Modest assignment
 
-TBA
+See module LLBTree.hs.
+
+This assignment deals with foldables (and functors).
 
 ## Tough assignment
 
