@@ -10,9 +10,8 @@ data ListOdd a = One a | More a a (ListOdd a)
 
 -- | ListOdd is a functor
 instance Functor ListOdd where
-  fmap f (One x) = One (f x)
-  fmap f (More x y l) = More (f x) (f y) (fmap f l)
-
+  fmap = undefined
+  
 -- | Test cases
 tests :: Test
 tests =
