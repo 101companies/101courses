@@ -7,6 +7,7 @@
 See these modules:
 * List1.hs
 * ListOdd.hs
+* ELGraph.hs
 
 This assignment deals with functors.
 
