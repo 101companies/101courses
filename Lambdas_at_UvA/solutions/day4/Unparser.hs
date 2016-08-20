@@ -9,7 +9,7 @@ import Test.HUnit (runTestTT, Test(TestLabel, TestList), (~=?))
 -- | spreads out elements vertically
 -- | and indents each element additionally
 pp :: [String] -> Doc
-pp = undefined
+pp = foldr (\s d -> text s $$ nest 1 d) empty
 
 -- | Test cases
 tests :: Test

@@ -2,7 +2,7 @@
 
 module ListOdd where
 
-import Test.HUnit (runTestTT, Test(TestLabel, TestList), (~?=))
+import Test.HUnit (runTestTT, Test(TestLabel, TestList), (~=?))
 
 -- | Lists that hold an odd number of elements
 data ListOdd a = One a | More a a (ListOdd a)
@@ -16,8 +16,8 @@ instance Functor ListOdd where
 tests :: Test
 tests =
   TestList [
-    TestLabel "fmap1" $ output1 ~?= fmap (+1) input,
-    TestLabel "fmap2" $ output2 ~?= fmap odd input
+    TestLabel "fmap1" $ output1 ~=? fmap (+1) input,
+    TestLabel "fmap2" $ output2 ~=? fmap odd input
   ]
  where
   input = More 1 2 (More 3 4 (One 5))

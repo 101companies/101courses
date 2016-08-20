@@ -14,7 +14,7 @@ data Expr =
 -- | An evaluator for these expression forms using the list monad
 eval :: Expr -> [Int]
 eval (Const i) = return i
-eval (Add e1 e2) = undefined
+eval (Add e1 e2) = eval e1 >>= \i1 -> eval e2 >>= \i2 -> return (i1+i2)
 eval (Choice e1 e2) = eval e1 `mplus` eval e2
 
 -- | Test cases

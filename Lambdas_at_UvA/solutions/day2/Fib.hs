@@ -2,7 +2,7 @@
 
 module Fib where
 
-import Test.HUnit (runTestTT, Test(TestLabel, TestList), (~?=))
+import Test.HUnit (runTestTT, Test(TestLabel, TestList), (~=?))
 
 -- | fibseq n returns the Fibonacci sequence of length n.
 -- | For example: fibseq 5 evaluates to [0,1,1,2,3].
@@ -19,10 +19,10 @@ fib n | n > 1 = fib (n-1) + fib (n-2)
 tests :: Test
 tests =
   TestList [
-    TestLabel "fibseq0" $ [] ~?= fibseq 0,
-    TestLabel "fibseq1" $ [0] ~?= fibseq 1,
-    TestLabel "fibseq5" $ [0,1,1,2,3] ~?= fibseq 5,
-    TestLabel "fibseq8" $ [0,1,1,2,3,5,8,13] ~?= fibseq 8
+    TestLabel "fibseq0" $ [] ~=? fibseq 0,
+    TestLabel "fibseq1" $ [0] ~=? fibseq 1,
+    TestLabel "fibseq5" $ [0,1,1,2,3] ~=? fibseq 5,
+    TestLabel "fibseq8" $ [0,1,1,2,3,5,8,13] ~=? fibseq 8
   ]
 
 -- | Run tests

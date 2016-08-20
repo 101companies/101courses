@@ -11,7 +11,7 @@ type Edge a = (String, String, a)
 
 -- | ELGraph is a functor
 instance Functor ELGraph where
-  fmap = undefined
+  fmap f (ELGraph es) = ELGraph (map (\(n1, n2, l) -> (n1, n2, f l)) es)
   
 -- | Test cases
 tests :: Test

@@ -10,11 +10,13 @@ data LLBTree a = Leaf a | Fork (LLBTree a) (LLBTree a)
 
 -- | LLBTree is a functor
 instance Functor LLBTree where
-  fmap = undefined
+  fmap f (Leaf x) = Leaf (f x)
+  fmap f (Fork l r) = Fork (fmap f l) (fmap f r)
 
 -- | LLBTree is a foldable
 instance Foldable LLBTree where
-  foldr = undefined
+  foldr f z (Leaf x) = f x z
+  foldr f z (Fork l r) = foldr f (foldr f z r) l
 
 -- | Test cases
 tests :: Test

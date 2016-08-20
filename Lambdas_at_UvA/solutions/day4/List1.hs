@@ -10,7 +10,8 @@ data List1 a = One a | More a (List1 a)
 
 -- | List1 is a functor
 instance Functor List1 where
-  fmap = undefined
+  fmap f (One x) = One (f x)
+  fmap f (More x l) = More (f x) (fmap f l)
 
 -- | Test cases
 tests :: Test

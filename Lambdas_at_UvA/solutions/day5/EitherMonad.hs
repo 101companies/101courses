@@ -30,8 +30,18 @@ eval (Concat e1 e2) =
 eval' :: Expr -> Either String (Either Int String)
 eval' (IntConst i) = return $ Left i
 eval' (StringConst s) = return $ Right s
-eval' (Add e1 e2) = undefined
-eval' (Concat e1 e2) = undefined
+eval' (Add e1 e2) = do
+  v1 <- eval' e1
+  v2 <- eval' e2
+  case (v1, v2) of
+    (Left i1, Left i2) -> return $ Left (i1+i2)
+    _ -> throwError "add on string"
+eval' (Concat e1 e2) = do
+  v1 <- eval' e1
+  v2 <- eval' e2
+  case (v1, v2) of
+    (Right s1, Right s2) -> return $ Right (s1++s2)
+    _ -> throwError "concat on int"
 
 -- | Test cases
 tests :: Test

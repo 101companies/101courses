@@ -2,7 +2,7 @@
 
 module Map where
 
-import Test.HUnit (runTestTT, Test(TestLabel, TestList), (~?=))
+import Test.HUnit (runTestTT, Test(TestLabel, TestList), (~=?))
 
 -- | function m is True, if the first components of m are distinct.
 -- | Hint: you are likely to need a helper function.
@@ -14,8 +14,8 @@ function = undefined
 tests :: Test
 tests =
   TestList [
-    TestLabel "function1" $ False ~?= function [('a','a'), ('a', 'b')],
-    TestLabel "function2" $ True ~?= function [('a','a'), ('b', 'b')]
+    TestLabel "function1" $ False ~=? function [('a','a'), ('a', 'b')],
+    TestLabel "function2" $ True ~=? function [('a','a'), ('b', 'b')]
   ]
 
 -- | Run tests

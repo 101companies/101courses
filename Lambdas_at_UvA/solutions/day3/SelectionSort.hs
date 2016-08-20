@@ -22,7 +22,7 @@ smallest :: Ord a => a -> [a] -> a
 smallest x [] = x
 smallest x (y:ys) = smallest (min x y) ys
 -}
-smallest = undefined -- use foldl/r
+smallest x = foldl min x
 
 -- | Remove a given element
 remove :: Eq a => a -> [a] -> [a]

@@ -10,7 +10,9 @@ type Parser = Parsec String ()
 
 -- | A parser for floats
 float :: Parser Float
-float = undefined
+float = (\x y -> read (x ++ y)) <$> many1 digit <*> places
+  where
+    places = option "" ((:) <$> char '.' <*> many1 digit)
 
 -- | Test cases
 tests :: Test

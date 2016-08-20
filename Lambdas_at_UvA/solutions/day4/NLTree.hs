@@ -19,7 +19,7 @@ instance Foldable NLTree where
   -- foldr f z (NLTree x ts) = foldr f z (x : concat (fmap toList ts))
   -- It basically takes advantage of the possibility of converting trees to lists.
   -- We are seeking an alternative definition that directly operates on trees.
-  foldr = undefined
+  foldr f z (NLTree x ts) = f x (foldr (\t z' -> foldr f z' t) z ts)
 
 -- | Test cases
 tests :: Test

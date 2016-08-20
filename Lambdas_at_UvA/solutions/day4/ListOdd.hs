@@ -1,16 +1,17 @@
 -- (C) 2016 softlang.org, Ralf Laemmel
 
-module List1 where
+module ListOdd where
 
 import Test.HUnit (runTestTT, Test(TestLabel, TestList), (~=?))
 
--- | Lists that cannot be empty
-data List1 a = One a | More a (List1 a)
+-- | Lists that hold an odd number of elements
+data ListOdd a = One a | More a a (ListOdd a)
   deriving (Eq, Show)
 
--- | List1 is a functor
-instance Functor List1 where
-  fmap = undefined
+-- | ListOdd is a functor
+instance Functor ListOdd where
+  fmap f (One x) = One (f x)
+  fmap f (More x y l) = More (f x) (f y) (fmap f l)
 
 -- | Test cases
 tests :: Test
@@ -20,9 +21,9 @@ tests =
     TestLabel "fmap2" $ output2 ~=? fmap odd input
   ]
  where
-  input = More 1 (More 2 (One 3))
-  output1 = More 2 (More 3 (One 4))
-  output2 = More True (More False (One True))
+  input = More 1 2 (More 3 4 (One 5))
+  output1 = More 2 3 (More 4 5 (One 6))
+  output2 = More True False (More True False (One True))
 
 -- | Run tests
 main :: IO ()

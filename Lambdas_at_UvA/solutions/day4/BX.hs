@@ -55,11 +55,21 @@ cut = fmap (fmap (/2))
 
 -- | "get" direction of bidirectional transformation
 get :: Company -> [NLTree Float]
-get = undefined
+get (Company _ ds) = getDs ds
+  where
+    getDs :: [Department] -> [NLTree Float]
+    getDs = map getD
+    getD :: Department -> NLTree Float
+    getD (Department _ b ds) = NLTree b (map getD ds)
 
 -- | "put" direction of bidirectional transformation
 put :: [NLTree Float] -> Company -> Company
-put = undefined
+put ts (Company n ds) = Company n (putDs ts ds)
+  where
+    putDs :: [NLTree Float] -> [Department] -> [Department]
+    putDs ts ds = map (uncurry putD) (zip ts ds)
+    putD :: NLTree Float -> Department -> Department
+    putD (NLTree b ts) (Department n _ ds) = Department n b (putDs ts ds)
     
 -- | Test cases
 tests :: Test

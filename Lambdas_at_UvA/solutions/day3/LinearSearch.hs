@@ -10,7 +10,7 @@ search :: Eq a => [a] -> a -> Bool
 search [] _ = False
 search (x:xs) y = x==y || search xs y
 -}
-search = undefined -- use foldl/r
+search xs y = foldr (\x -> (||) (x == y)) False xs
 
 -- | Test cases
 tests :: Test

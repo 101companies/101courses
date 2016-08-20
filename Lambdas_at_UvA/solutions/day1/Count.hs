@@ -15,7 +15,7 @@ encoding for your files.
 
 module Count where
 
-import Test.HUnit (runTestTT, Test(TestLabel, TestList), (~?=))
+import Test.HUnit (runTestTT, Test(TestLabel, TestList), (~=?))
 
 -- | count c s returns the number of times c occurs in s.
 -- | For example: count 'x' "xyz" evaluates to 1.
@@ -29,9 +29,9 @@ count c (c':cs) = (if c==c' then 1 else 0)+count c cs
 tests :: Test
 tests =
   TestList [
-    TestLabel "count0" $ 0 ~?= count 'x' "abc",
-    TestLabel "count1" $ 1 ~?= count 'x' "xyz",
-    TestLabel "count3" $ 3 ~?= count 'a' "reallynotabba"
+    TestLabel "count0" $ 0 ~=? count 'x' "abc",
+    TestLabel "count1" $ 1 ~=? count 'x' "xyz",
+    TestLabel "count3" $ 3 ~=? count 'a' "reallynotabba"
   ]
 
 -- | Run tests

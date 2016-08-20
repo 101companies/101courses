@@ -42,12 +42,30 @@ class Term a where
 
 -- | Make Expr an instance of Term
 instance Term Expr where
-  explode = undefined
-  implode = undefined
+  explode TRUE = TermRep "TRUE" []
+  explode FALSE = TermRep "FALSE" []
+  explode Zero = TermRep "Zero" []
+  explode (Succ e) = TermRep "Succ" [explode e]
+  explode (Pred e) = TermRep "Pred" [explode e]
+  explode (IsZero e) = TermRep "IsZero" [explode e]
+  explode (If e0 e1 e2) = TermRep "If" (map explode [e0, e1, e2])
+  implode (TermRep "TRUE" []) = TRUE
+  implode (TermRep "FALSE" []) = FALSE
+  implode (TermRep "Zero" []) = Zero
+  implode (TermRep "Succ" [t]) = Succ (implode t)
+  implode (TermRep "Pred" [t]) = Pred (implode t)
+  implode (TermRep "IsZero" [t]) = IsZero (implode t)
+  implode (TermRep "If" [t0, t1, t2]) = If e0 e1 e2
+    where
+      e0 = implode t0
+      e1 = implode t1
+      e2 = implode t2
 
 -- | Count constructors; use TermRep!
 metric :: Term a => a -> Map ConstrId Int
-metric = undefined
+metric t = f empty $ explode t
+  where
+    f m (TermRep c rs) = foldl f (insertWith (+) c 1 m) rs
 
 -- | Sample output of metric
 sampleMetric :: Map ConstrId Int

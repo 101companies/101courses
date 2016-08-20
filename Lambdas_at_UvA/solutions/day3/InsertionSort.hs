@@ -14,7 +14,7 @@ inserts :: Ord a => [a] -> [a] -> [a]
 inserts [] r = r
 inserts (x:xs) r = inserts xs (insert x r)
 -}
-inserts = undefined -- use foldl/r
+inserts xs r = foldl (flip insert) r xs
 
 -- | Insert a given element in a list
 insert :: Ord a => a -> [a] -> [a]

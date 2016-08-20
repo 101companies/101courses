@@ -15,7 +15,7 @@ filter _ [] = []
 -- filter p (x:xs) = if p x then x : r else r where r = filter p xs
 -- 3. There is no performance penalty due to extra list processing. Thus, this is NOT OK:
 -- filter p (x:xs) = (if p x then [x] else []) ++ filter p xs
-filter p (x:xs) = undefined
+filter p (x:xs) = (if p x then (:) x else id) (filter p xs)
 
 -- | Test cases
 tests :: Test

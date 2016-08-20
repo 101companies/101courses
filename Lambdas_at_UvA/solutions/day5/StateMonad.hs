@@ -30,8 +30,8 @@ eval :: Expr -> State (Map String Int) Int
 eval (Const i) = return i
 eval (Add e1 e2) = eval e1 >>= \i1 -> eval e2 >>= \i2 -> return (i1+i2) 
 eval (Seq e1 e2) = eval e1 >> eval e2
-eval (Assign s e) = undefined
-eval (Var i) = undefined
+eval (Assign s e) = eval e >>= \i -> modify (insert s i) >> return i
+eval (Var i) = get >>= return . fromJust . lookup i
 
 -- | Test cases
 tests :: Test
